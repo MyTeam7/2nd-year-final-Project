@@ -265,7 +265,8 @@ namespace billing_system
             txtBoxDiscount.Text = "";
             textBox2.Text = "";
             textBox8.Text = "";
-            //txtBoxOther.Text = "";
+            textBox11.Text = "";
+            textBox10.Text = "";
         }
         public void clearUser()
         {
