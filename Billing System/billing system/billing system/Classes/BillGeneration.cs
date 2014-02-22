@@ -285,7 +285,10 @@ namespace billing_system.Classes
                 MessageBox.Show("Errror Occured, Please Try Again, " + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
+            finally
+            {
+                db.CloseConnection();
+            }
 
         }
 
@@ -296,9 +299,53 @@ namespace billing_system.Classes
 
 
 
+        //--------------startOfupdate_qty Function---------------------------------------------------------------------------------------------------------------------
+        public void update_qty(object obj, int qty, string code)
+        {
+            DBConnection db = new DBConnection();
+            try
+            {
+                if (db.OpenConnection() == true)
+                {
+                    int quantity = 0;
+                    string query1 = "SELECT Quantity FROM items WHERE Item_Code=" + code + "";
+                    MySqlCommand cmd = new MySqlCommand(query1, db.connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+                    quantity = int.Parse(table.Rows[0].ItemArray[0].ToString());
+
+
+                    quantity = quantity + int.Parse(qty.ToString());
+
+                    string query2 = "UPDATE items SET Quantity=" + quantity + " WHERE Item_Code=" + code + "";
+                    MySqlCommand cmd1 = new MySqlCommand(query2, db.connection);
+                    cmd1.ExecuteNonQuery();
+
+
+                    total(obj);
+
+
+                }
 
 
 
+
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error Occured," + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                db.CloseConnection();
+            }
+        }
+
+
+        //--------------endOfupdate_qty Function--------------------------------------------------------------------------------------------------------------------
 
 
     }
