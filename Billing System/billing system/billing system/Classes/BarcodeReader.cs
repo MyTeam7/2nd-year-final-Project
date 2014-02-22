@@ -27,7 +27,7 @@ namespace billing_system.Classes
             DBConnection db = new DBConnection();
             try
             {
-                string query = "SELECT * FROM items WHERE Item_Code='"+barCode+"'";
+                string query = "SELECT * FROM items WHERE Item_Code='" + barCode + "'";
 
 
 
@@ -39,22 +39,22 @@ namespace billing_system.Classes
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable table = new DataTable();
                     adapter.Fill(table);
-                    
-                    if(table.Rows.Count==0)
+
+                    if (table.Rows.Count == 0)
                     {
                         MessageBox.Show("Invalid BarCode", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
-                        Billingform bf=(Billingform)obj;
-                        bf.txtBoxDescription.Text=table.Rows[0].ItemArray[1].ToString();
-                        bf.txtBoxDiscount.Text=table.Rows[0].ItemArray[4].ToString();
-                        bf.textBox8.Text=table.Rows[0].ItemArray[2].ToString();
+                        Billingform bf = (Billingform)obj;
+                        bf.txtBoxDescription.Text = table.Rows[0].ItemArray[1].ToString();
+                        bf.txtBoxDiscount.Text = table.Rows[0].ItemArray[6].ToString();
+                        bf.textBox8.Text = table.Rows[0].ItemArray[4].ToString();
                         bf.txtBoxCode.ReadOnly = true;
                         bf.ActiveControl = bf.textBox2;
                     }
 
-                    
+
 
 
 

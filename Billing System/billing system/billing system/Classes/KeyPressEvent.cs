@@ -420,7 +420,7 @@ namespace billing_system.Classes
         //--------------startOfEnter Function---------------------------------------------------------------------------------------------------------------------------
         public void enterButton(string form, string focus, object obj, object formobj = null)
         {
-
+            DBConnection db = new DBConnection();
             try
             {
 
@@ -436,10 +436,10 @@ namespace billing_system.Classes
 
                         int code = (int)mb.dataGridView1.Rows[row].Cells[0].Value;
                         string des = mb.dataGridView1.Rows[row].Cells[1].Value.ToString();
-                        decimal price = (decimal)mb.dataGridView1.Rows[row].Cells[2].Value;
-                        decimal l_price = (decimal)mb.dataGridView1.Rows[row].Cells[3].Value;
-                        decimal disc = (decimal)mb.dataGridView1.Rows[row].Cells[4].Value; ;
-                        string other = mb.dataGridView1.Rows[row].Cells[5].Value.ToString();
+                        decimal price = (decimal)mb.dataGridView1.Rows[row].Cells[4].Value;
+                        decimal l_price = (decimal)mb.dataGridView1.Rows[row].Cells[5].Value;
+                        decimal disc = (decimal)mb.dataGridView1.Rows[row].Cells[6].Value; ;
+                        //string other = mb.dataGridView1.Rows[row].Cells[5].Value.ToString();
 
 
 
@@ -500,8 +500,59 @@ namespace billing_system.Classes
 
                     bf.dataGridView1.Rows.Add(bf.dataGridView1.RowCount + 1, code, des, qty, disc, price, tot);
 
-                    BillGeneration bg = new BillGeneration();
-                    bg.total(bf);
+                    //reduce qty
+                    if (db.OpenConnection() == true)
+                    {
+
+                        int quantity = 0;
+                        string query1 = "SELECT Quantity FROM items WHERE Item_Code=" + code + "";
+                        MySqlCommand cmd = new MySqlCommand(query1, db.connection);
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        DataTable table = new DataTable();
+                        adapter.Fill(table);
+                        quantity = int.Parse(table.Rows[0].ItemArray[0].ToString());
+
+                        if (quantity > int.Parse(qty.ToString()))
+                        {
+                            quantity = quantity - int.Parse(qty.ToString());
+
+                            string query2 = "UPDATE items SET Quantity=" + quantity + " WHERE Item_Code=" + code + "";
+                            MySqlCommand cmd1 = new MySqlCommand(query2, db.connection);
+                            cmd1.ExecuteNonQuery();
+
+                            ItemDBConnection idc = new ItemDBConnection();
+                            idc.reorder(code, quantity);
+
+                            BillGeneration bg = new BillGeneration();
+                            bg.total(bf);
+
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("According to Database Stocks in hand is lesser than the Quantity that you going to purchuase", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                            bf.dataGridView1.Rows.RemoveAt(bf.dataGridView1.RowCount - 1);
+
+                            bf.txtBoxCode.Text = "";
+                            bf.txtBoxDescription.Text = "";
+                            bf.textBox8.Text = "";
+                            bf.textBox2.Text = "";
+                            bf.txtBoxDiscount.Text = "";
+                            bf.ActiveControl = bf.txtBoxDescription;
+                        }
+
+
+
+                    }
+
+
+
+
+
+
+
+
 
 
                 }
@@ -531,7 +582,10 @@ namespace billing_system.Classes
                 MessageBox.Show("Error Occured, Please Try Again, " + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
+            finally
+            {
+                db.CloseConnection();
+            }
 
 
 

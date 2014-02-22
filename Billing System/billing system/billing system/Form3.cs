@@ -384,6 +384,8 @@ namespace billing_system
                 }
                 else if (int.Parse(keyVal) == 46)
                 {
+                    int qty = int.Parse(dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[3].Value.ToString());
+                    string code = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
                     dataGridView1.Rows.RemoveAt(dataGridView1.CurrentCell.RowIndex);
 
                     if (dataGridView1.RowCount == 0)
@@ -404,7 +406,7 @@ namespace billing_system
                         txtBoxDescription.Select(txtBoxDescription.Text.Length, 0);   //move cursor into the end of text in the textbox
                     }
                     BillGeneration bg = new BillGeneration();
-                    bg.total(this);
+                    bg.update_qty(this, qty, code);
                 }
                 else
                 {
@@ -477,7 +479,7 @@ namespace billing_system
 
         public void reload()
         {
-            Billingform bf = new Billingform(user_name,log);
+            Billingform bf = new Billingform(user_name, log);
             bf.Show();
             this.Close();
         }
