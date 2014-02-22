@@ -15,10 +15,10 @@ namespace billing_system.Classes
     class ItemDBConnection : DBConnection
     {
 
-        public void Insert(int textboxCode, string txtboxDescription, decimal txtboxDiscount, decimal lowestPrice, decimal price, string txtboxOther)
+        public void Insert(int textboxCode, string txtboxDescription, decimal txtboxDiscount, decimal lowestPrice, decimal price, int textBox111, int textBox10)
         {
 
-            string query = "INSERT items(Item_Code,Description,Discount,Lowest_Price,price,Others) VALUES('" + textboxCode + "','" + txtboxDescription + "','" + txtboxDiscount + "','" + lowestPrice + "','" + price + "','" + txtboxOther + "')";
+            string query = "INSERT items(Item_Code,Description,Discount,Lowest_Price,price,Quantity,Reorder_Level) VALUES('" + textboxCode + "','" + txtboxDescription + "','" + txtboxDiscount + "','" + lowestPrice + "','" + price + "','" + textBox10 + "','" + textBox111 + "')";
 
             try
             {
@@ -43,10 +43,10 @@ namespace billing_system.Classes
         }
 
         //Update statement
-        public void Update(int textboxCode, string txtboxDescription, decimal txtboxDiscount, decimal lowestPrice, decimal price, string txtboxOther)
+        public void Update(int textboxCode, string txtboxDescription, decimal txtboxDiscount, decimal lowestPrice, decimal price, int textBox111, int textBox10)
         {
 
-            string query = "UPDATE items SET Item_Code='" + textboxCode + "', Description='" + txtboxDescription + "',Discount='" + txtboxDiscount + "',Lowest_Price='" + lowestPrice + "',price='" + price + "',Others='" + txtboxOther + "' WHERE Item_Code= '" + textboxCode + "'";
+            string query = "UPDATE items SET Item_Code='" + textboxCode + "', Description='" + txtboxDescription + "',Discount='" + txtboxDiscount + "',Lowest_Price='" + lowestPrice + "',price='" + price + "',Reorder_Level='" + textBox111 + "',Quantity='" + textBox10 + "' WHERE Item_Code= '" + textboxCode + "'";
 
             DialogResult dialogResult = MessageBox.Show("Are you sure want to Update?", "Confirmation", MessageBoxButtons.YesNo);
             if (dialogResult == DialogResult.Yes)
