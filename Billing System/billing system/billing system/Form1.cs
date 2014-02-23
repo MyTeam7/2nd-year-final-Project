@@ -81,6 +81,8 @@ namespace billing_system
                                 Admin AdForm = new Admin(this, "Storekeeper");
                                 AdForm.Show();
                                 this.Hide();
+                                UserName.Text = "UserName";
+                                maskedTextBox1.Text = "Password";
                             }
 
                         }

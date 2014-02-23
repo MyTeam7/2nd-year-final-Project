@@ -9,7 +9,6 @@ namespace billing_system.Classes
     class UpdateQty : DBConnection
     {
         private MySqlCommand command;
-        private MySqlDataReader reader;
         private String Quary;
         private String Quary1;
         private String Qty_level;
@@ -41,7 +40,7 @@ namespace billing_system.Classes
                 MySqlCommand cmd = new MySqlCommand(Quary1, connection);
                 cmd.ExecuteNonQuery();
 
-                if (sum != null)
+                if (sum != 0)
                 {
 
                     string Quary2 = "Select Reorder_Level from items where Item_Code  ='" + item_code + "'";
