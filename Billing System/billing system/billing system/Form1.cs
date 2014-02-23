@@ -75,6 +75,12 @@ namespace billing_system
                                 UserName.Text = "UserName";
                                 maskedTextBox1.Text = "Password";
                             }
+                            else if (UPName.UserCatagory() == "Storekeeper")
+                            {
+                                Admin AdForm = new Admin(this, "Storekeeper");
+                                AdForm.Show();
+                                this.Hide();
+                            }
                         }
                         else
                         {
