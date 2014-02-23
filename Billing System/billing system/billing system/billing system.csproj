@@ -54,6 +54,7 @@
     <Compile Include="Classes\ReorderForm.cs" />
     <Compile Include="Classes\Reports.cs" />
     <Compile Include="Classes\SupplierDBConnection.cs" />
+    <Compile Include="Classes\UpdateQty.cs" />
     <Compile Include="Classes\UserDbConnection.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Classes\KeyPressEvent.cs" />
