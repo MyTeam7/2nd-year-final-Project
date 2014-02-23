@@ -76,6 +76,8 @@ namespace billing_system
             supp.search(dataGridView4);
             //---------------------------------------------------------------------------
 
+            ReorderForm reorder = new ReorderForm();
+            reorder.reorderLevel(this,Reorder);
 
         }
 
@@ -570,6 +572,12 @@ namespace billing_system
                 textBox17.Text = row.Cells["Supplier_Address"].Value.ToString();
 
             }
+        }
+
+        private void Reorder_Click(object sender, EventArgs e)
+        {
+            Form5 reorder = new Form5();
+            reorder.Show();
         }
 
     }

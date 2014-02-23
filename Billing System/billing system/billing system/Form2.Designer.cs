@@ -173,6 +173,8 @@
             this.Reorder.Size = new System.Drawing.Size(80, 43);
             this.Reorder.TabIndex = 17;
             this.Reorder.UseVisualStyleBackColor = true;
+            this.Reorder.Visible = false;
+            this.Reorder.Click += new System.EventHandler(this.Reorder_Click);
             // 
             // button10
             // 

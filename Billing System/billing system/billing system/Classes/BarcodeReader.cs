@@ -31,7 +31,6 @@ namespace billing_system.Classes
 
 
 
-
                 if (db.OpenConnection() == true)
                 {
                     //populate data gridview from result

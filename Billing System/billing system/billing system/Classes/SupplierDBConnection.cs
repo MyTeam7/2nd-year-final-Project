@@ -197,7 +197,6 @@ namespace billing_system.Classes
 
             }
 
-
             finally
             {
                CloseConnection();
