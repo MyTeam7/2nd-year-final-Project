@@ -572,5 +572,15 @@ namespace billing_system
             }
         }
 
+        private void Qty_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
     }
 }
