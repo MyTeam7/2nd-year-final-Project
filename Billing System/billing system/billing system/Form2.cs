@@ -574,7 +574,7 @@ namespace billing_system
             }
         }
 
-<<<<<<< HEAD
+
         private void Qty_Click(object sender, EventArgs e)
         {
 
@@ -583,12 +583,12 @@ namespace billing_system
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
 
-=======
+        }
         private void Reorder_Click(object sender, EventArgs e)
         {
             Form5 reorder = new Form5();
             reorder.Show();
->>>>>>> origin/Aruna
+
         }
 
     }
