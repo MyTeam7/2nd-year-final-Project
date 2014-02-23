@@ -114,21 +114,21 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.Qty = new System.Windows.Forms.TabPage();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.textBox20 = new System.Windows.Forms.TextBox();
-            this.textBox21 = new System.Windows.Forms.TextBox();
-            this.textBox22 = new System.Windows.Forms.TextBox();
-            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.button11 = new System.Windows.Forms.Button();
             this.button14 = new System.Windows.Forms.Button();
             this.button16 = new System.Windows.Forms.Button();
             this.button17 = new System.Windows.Forms.Button();
             this.textBox24 = new System.Windows.Forms.TextBox();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.textBox23 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
             this.adminTabPg.SuspendLayout();
             this.Items.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -144,8 +144,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.panel5.SuspendLayout();
             this.Qty.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.panel6.SuspendLayout();
             this.SuspendLayout();
             // 
             // adminTabPg
@@ -1142,90 +1142,13 @@
             this.Qty.Text = "Qty";
             this.Qty.Click += new System.EventHandler(this.Qty_Click);
             // 
-            // panel6
+            // dataGridView5
             // 
-            this.panel6.BackColor = System.Drawing.Color.Gray;
-            this.panel6.Controls.Add(this.textBox23);
-            this.panel6.Controls.Add(this.textBox22);
-            this.panel6.Controls.Add(this.textBox21);
-            this.panel6.Controls.Add(this.textBox20);
-            this.panel6.Controls.Add(this.label25);
-            this.panel6.Controls.Add(this.label27);
-            this.panel6.Controls.Add(this.label26);
-            this.panel6.Controls.Add(this.label28);
-            this.panel6.Location = new System.Drawing.Point(6, 17);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(966, 50);
-            this.panel6.TabIndex = 0;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(302, 13);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(86, 19);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "Description";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(692, 13);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(50, 19);
-            this.label27.TabIndex = 2;
-            this.label27.Text = "E_Qty";
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(13, 13);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(43, 19);
-            this.label28.TabIndex = 3;
-            this.label28.Text = "Code";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(840, 13);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(34, 19);
-            this.label25.TabIndex = 2;
-            this.label25.Text = "Qty";
-            // 
-            // textBox20
-            // 
-            this.textBox20.Location = new System.Drawing.Point(62, 10);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(229, 24);
-            this.textBox20.TabIndex = 4;
-            // 
-            // textBox21
-            // 
-            this.textBox21.Location = new System.Drawing.Point(394, 10);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Size = new System.Drawing.Size(279, 24);
-            this.textBox21.TabIndex = 5;
-            // 
-            // textBox22
-            // 
-            this.textBox22.Location = new System.Drawing.Point(880, 10);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(69, 24);
-            this.textBox22.TabIndex = 6;
-            // 
-            // textBox23
-            // 
-            this.textBox23.Location = new System.Drawing.Point(748, 10);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(86, 24);
-            this.textBox23.TabIndex = 7;
+            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView5.Location = new System.Drawing.Point(7, 130);
+            this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.Size = new System.Drawing.Size(964, 548);
+            this.dataGridView5.TabIndex = 22;
             // 
             // button11
             // 
@@ -1292,13 +1215,90 @@
             this.textBox24.Size = new System.Drawing.Size(456, 26);
             this.textBox24.TabIndex = 17;
             // 
-            // dataGridView5
+            // panel6
             // 
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(7, 130);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(964, 548);
-            this.dataGridView5.TabIndex = 22;
+            this.panel6.BackColor = System.Drawing.Color.Gray;
+            this.panel6.Controls.Add(this.textBox23);
+            this.panel6.Controls.Add(this.textBox22);
+            this.panel6.Controls.Add(this.textBox21);
+            this.panel6.Controls.Add(this.textBox20);
+            this.panel6.Controls.Add(this.label25);
+            this.panel6.Controls.Add(this.label27);
+            this.panel6.Controls.Add(this.label26);
+            this.panel6.Controls.Add(this.label28);
+            this.panel6.Location = new System.Drawing.Point(6, 17);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(966, 50);
+            this.panel6.TabIndex = 0;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // textBox23
+            // 
+            this.textBox23.Location = new System.Drawing.Point(748, 10);
+            this.textBox23.Name = "textBox23";
+            this.textBox23.Size = new System.Drawing.Size(86, 24);
+            this.textBox23.TabIndex = 7;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(880, 10);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(69, 24);
+            this.textBox22.TabIndex = 6;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(394, 10);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(279, 24);
+            this.textBox21.TabIndex = 5;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(62, 10);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(229, 24);
+            this.textBox20.TabIndex = 4;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(840, 13);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(34, 19);
+            this.label25.TabIndex = 2;
+            this.label25.Text = "Qty";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(692, 13);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(50, 19);
+            this.label27.TabIndex = 2;
+            this.label27.Text = "E_Qty";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(302, 13);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(86, 19);
+            this.label26.TabIndex = 1;
+            this.label26.Text = "Description";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label28.Location = new System.Drawing.Point(13, 13);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(43, 19);
+            this.label28.TabIndex = 3;
+            this.label28.Text = "Code";
             // 
             // Admin
             // 
@@ -1337,9 +1337,9 @@
             this.panel5.PerformLayout();
             this.Qty.ResumeLayout(false);
             this.Qty.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
 
         }
