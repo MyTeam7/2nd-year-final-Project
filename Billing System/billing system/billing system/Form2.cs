@@ -13,6 +13,7 @@ namespace billing_system
     public partial class Admin : Form
     {
         public Login log;
+        public String storekeeper_name;
         public Admin()
         {
             InitializeComponent();
@@ -22,6 +23,39 @@ namespace billing_system
         {
             this.log = log;
             InitializeComponent();
+        }
+        public Admin(Login log,String storekeeper_name)
+        {
+            this.storekeeper_name = storekeeper_name;
+            this.log = log;
+            InitializeComponent();
+
+        }
+
+        public void setQtyTab()
+        {
+            if (storekeeper_name == "Storekeeper")
+            {
+                //((Control)this.adminTabPg).Enabled = false;
+                //adminTabPg.TabPages(Items).visible = true;
+
+                Items.Enabled = false;
+                Users.Enabled = false;
+                Report.Enabled = false;
+                Supplier.Enabled = false;
+                Qty.Enabled = true;
+
+                // adminTabPg.TabPages.Remove(Items);            
+
+            }
+            else {
+                Items.Enabled = true;
+                Users.Enabled = true;
+                Report.Enabled = true;
+                Supplier.Enabled = true;
+                Qty.Enabled = false;
+            }
+
         }
 
         //DataTable dbtable;
@@ -42,7 +76,7 @@ namespace billing_system
                 int textBox111 = int.Parse(textBox11.Text);
                 int textBox100 = int.Parse(textBox10.Text);
 
-
+                
 
                 ItemDBConnection adminDb = new ItemDBConnection();
 
@@ -589,6 +623,19 @@ namespace billing_system
             Form5 reorder = new Form5();
             reorder.Show();
 
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if ((textBox20.Text == "") || (textBox21.Text == "") || (textBox23.Text == "") || (textBox22.Text == ""))
+            {
+                MessageBox.Show("All the fields must be Filled");
+            }
+
+            int Code = int.Parse(textBox20.Text);
+            int Qty = int.Parse(textBox23.Text);
+            UpdateQty upQty =new  UpdateQty();
+            upQty.UserCatagory(Code, Qty);
         }
 
     }
