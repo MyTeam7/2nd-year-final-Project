@@ -48,15 +48,23 @@ namespace billing_system
 
         private void button5_Click(object sender, EventArgs e)
         {
-            int Alert_ID = int.Parse(code);
-            int sid = int.Parse(textBox12.Text);
-            string name =textBox13.Text;
-            string company_name = textBox16.Text;           
-            
-            string sms = richTextBox1.Text;
+            if ((textBox12.Text == "") || (textBox13.Text == "") || (richTextBox1.Text == "") || (textBox16.Text == "") || (textBox19.Text == "") || (textBox15.Text == ""))
+            {
+                MessageBox.Show("All the fields must be Filled");
+            }
+            else
+            {
 
-            ReorderForm rdform = new ReorderForm();
-            rdform.sendSupplier(Alert_ID,sid,name,company_name,sms ,this);
+                int Alert_ID = int.Parse(code);
+                int sid = int.Parse(textBox12.Text);
+                string name = textBox13.Text;
+                string company_name = textBox16.Text;
+
+                string sms = richTextBox1.Text;
+
+                ReorderForm rdform = new ReorderForm();
+                rdform.sendSupplier(Alert_ID, sid, name, company_name, sms, this);
+            }
         }
 
         private void button6_Click(object sender, EventArgs e)

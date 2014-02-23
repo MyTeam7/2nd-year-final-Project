@@ -16,14 +16,14 @@ namespace billing_system.Classes
     /// </summary>
     class ReorderForm : DBConnection
     {
-
+        //Adminpage alert message
         public void reorderLevel(object obj,Button Reorder)
         {
            
  
             try
             {
-                string query = "SELECT COUNT(Item_Code) FROM alert";
+                string query = "SELECT COUNT(Item_Code) FROM alert GROUP BY Send_Info ";
                 int count = 0;        //initialize count variable
 
 
@@ -78,7 +78,7 @@ namespace billing_system.Classes
                     adapter.Update(table);
 
                 }
-                
+                //add pic datagridview
                 DataGridViewImageColumn img = new DataGridViewImageColumn();
                 img.Name = "Status";
                 dataGrid.Columns.Add(img);
@@ -111,7 +111,7 @@ namespace billing_system.Classes
             }
         }
 
-
+        //send supplier message
         public void sendSupplier(int AlertID, int sid,string name,string company_name,string sms,Object obj)
         {          
 
@@ -134,7 +134,7 @@ namespace billing_system.Classes
                     //close connection
                     this.CloseConnection();
                 }
-
+                //clear textbox
                 Form5 fm5 = (Form5)obj;
                 fm5.textBox12.Text = "";
                 fm5.textBox13.Text = "";
@@ -151,7 +151,7 @@ namespace billing_system.Classes
         }
 
 
-
+        //add textBox supplier Details
         public void clicButton(Object obj,string code) {
 
             string query1 = "SELECT suppliers.* FROM suppliers ,items as it where suppliers.Supplier_ID=it.Supplier_ID and it.Item_Code=" + code + "";
