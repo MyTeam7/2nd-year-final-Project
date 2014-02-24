@@ -27,7 +27,7 @@ namespace billing_system
 
      
 
-        private void Form5_Load(object sender, EventArgs e)
+        public void Form5_Load(object sender, EventArgs e)
         {
             ReorderForm re= new ReorderForm();
             re.search(this,dataGridView1);
@@ -68,6 +68,11 @@ namespace billing_system
 
                 ReorderForm rdform = new ReorderForm();
                 rdform.sendSupplier(alert, sid, name, company_name, sms, this);
+
+                Form5 reload = new Form5();
+                reload.Show();
+                this.Close();
+ 
             }
         }
 
