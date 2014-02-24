@@ -570,14 +570,20 @@ namespace billing_system.Classes
                     {
                         SystemSounds.Hand.Play();
                     }
-                    if (form == "bf" && focus == "dgv")
-                    {
-                        Form6 newform = new Form6();
-                        newform.Show();
-                    }
+                   
 
                 }
 
+
+                if (form == "bf" && focus == "dgv")
+                {
+                    
+                    Form6 newform = new Form6(obj);
+
+                    newform.Show();
+                   
+                    
+                }
 
 
 
