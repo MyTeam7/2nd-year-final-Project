@@ -86,12 +86,16 @@ namespace billing_system
             KeyPressEvent kpe = new KeyPressEvent();
            
             kpe.manualBilling("admin", "", this,"itm");
-            
+            kpe.manualBilling("admin", "", this, "usrs");
             kpe.manualBilling("admin", "", this,"qty");
+            kpe.manualBilling("admin", "", this, "sup");
 
             this.KeyPreview = true;
             this.textBox6.KeyDown += new KeyEventHandler(textBox6_KeyDown);
             this.textBox24.KeyDown += new KeyEventHandler(textBox24_KeyDown);
+            this.txtBoxSearch.KeyDown += new KeyEventHandler(txtBoxSearch_KeyDown);
+            this.textBox18.KeyDown += new KeyEventHandler(textBox18_KeyDown);
+            
             //-------------------------------------------------------------------------------------------------------
 
             //---------------------------Aruna Udayana - supplier tab form_Load   ----------------------------------
@@ -324,18 +328,18 @@ namespace billing_system
 
                 string keyVal;
                 string keyCd;
-                string searchKey;
+                string searchKey="";
 
 
 
                 keyVal = e.KeyValue.ToString(); //keycode value
                 keyCd = e.KeyCode.ToString().ToLower(); //character
 
+                
+                    KeyPressEvent kpe = new KeyPressEvent();
 
-                KeyPressEvent kpe = new KeyPressEvent();
-
-                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "search", this);
-
+                    searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "itm", this);
+                
 
 
                 if (searchKey == "exit")
@@ -646,7 +650,42 @@ namespace billing_system
 
                 string keyVal;
                 string keyCd;
-                string searchKey;
+                string searchKey = "";
+
+
+
+                keyVal = e.KeyValue.ToString(); //keycode value
+                keyCd = e.KeyCode.ToString().ToLower(); //character
+
+               
+                    KeyPressEvent kpe = new KeyPressEvent();
+
+                    searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "qty", this);
+                
+
+
+                if (searchKey == "exit")
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error Occured, Please Try Again, " + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        public void textBox18_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            try
+            {
+
+                string keyVal;
+                string keyCd;
+                string searchKey = "";
 
 
 
@@ -656,7 +695,7 @@ namespace billing_system
 
                 KeyPressEvent kpe = new KeyPressEvent();
 
-                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "search", this);
+                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "sup", this);
 
 
 
@@ -672,6 +711,48 @@ namespace billing_system
             }
 
         }
+
+
+
+        public void txtBoxSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            try
+            {
+
+                string keyVal;
+                string keyCd;
+                string searchKey = "";
+
+
+
+                keyVal = e.KeyValue.ToString(); //keycode value
+                keyCd = e.KeyCode.ToString().ToLower(); //character
+
+
+                KeyPressEvent kpe = new KeyPressEvent();
+
+                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "usrs", this);
+
+
+
+                if (searchKey == "exit")
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error Occured, Please Try Again, " + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+
+
+
+
         //---------------------------------------------------------------------------
 
 
