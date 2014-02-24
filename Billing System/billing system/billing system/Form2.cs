@@ -671,26 +671,19 @@ namespace billing_system
 
             }
 
-<<<<<<< HEAD
+
             int Code = int.Parse(textBox20.Text);
             int Qty = int.Parse(textBox23.Text);
             //UpdateQty class
             UpdateQty upQty =new  UpdateQty();
             //method of UpdateQty Class
             upQty.UserCatagory(Code, Qty);
-=======
->>>>>>> origin/master
+
         }
         //-------------------------------------------------------------------------------------------------------------------
 
         private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
-        }
-
-        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView5.Rows[e.RowIndex];
@@ -699,9 +692,7 @@ namespace billing_system
                 textBox21.Text = row.Cells["Description"].Value.ToString();
                 textBox22.Text = row.Cells["Quantity"].Value.ToString();
             }
-
-        }
-
+        }    
 
         //---------------------------------------------------------------------------
 
