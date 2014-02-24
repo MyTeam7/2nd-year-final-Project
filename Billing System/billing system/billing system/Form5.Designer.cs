@@ -33,6 +33,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox19 = new System.Windows.Forms.TextBox();
@@ -45,8 +47,6 @@
             this.label21 = new System.Windows.Forms.Label();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -100,6 +100,36 @@
             this.panel5.Size = new System.Drawing.Size(984, 214);
             this.panel5.TabIndex = 1;
             // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Gainsboro;
+            this.button5.BackgroundImage = global::billing_system.Properties.Resources.edit;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(775, 159);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(80, 43);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "Send";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Gainsboro;
+            this.button6.BackgroundImage = global::billing_system.Properties.Resources.delete;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.Location = new System.Drawing.Point(872, 159);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(80, 43);
+            this.button6.TabIndex = 22;
+            this.button6.Text = "Cancel";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(48, 59);
@@ -111,6 +141,7 @@
             // textBox16
             // 
             this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox16.Enabled = false;
             this.textBox16.Location = new System.Drawing.Point(757, 16);
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(195, 24);
@@ -119,6 +150,7 @@
             // textBox19
             // 
             this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox19.Enabled = false;
             this.textBox19.Location = new System.Drawing.Point(757, 60);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(195, 24);
@@ -127,6 +159,7 @@
             // textBox13
             // 
             this.textBox13.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox13.Enabled = false;
             this.textBox13.Location = new System.Drawing.Point(287, 13);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(341, 24);
@@ -175,10 +208,12 @@
             // textBox15
             // 
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox15.Enabled = false;
             this.textBox15.Location = new System.Drawing.Point(757, 103);
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(195, 24);
             this.textBox15.TabIndex = 1;
+            this.textBox15.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             // 
             // label21
             // 
@@ -193,10 +228,12 @@
             // textBox12
             // 
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox12.Enabled = false;
             this.textBox12.Location = new System.Drawing.Point(48, 13);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(150, 24);
             this.textBox12.TabIndex = 1;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
             // 
             // label19
             // 
@@ -207,36 +244,6 @@
             this.label19.Size = new System.Drawing.Size(39, 19);
             this.label19.TabIndex = 0;
             this.label19.Text = "S_ID";
-            // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Gainsboro;
-            this.button5.BackgroundImage = global::billing_system.Properties.Resources.edit;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(775, 159);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(80, 43);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Send";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Gainsboro;
-            this.button6.BackgroundImage = global::billing_system.Properties.Resources.delete;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(872, 159);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 43);
-            this.button6.TabIndex = 22;
-            this.button6.Text = "Cancel";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // Form5
             // 
@@ -249,6 +256,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form5";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Reorder Form";
             this.Load += new System.EventHandler(this.Form5_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

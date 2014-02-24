@@ -167,6 +167,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ManualBilling";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Manual billing";
             this.Load += new System.EventHandler(this.ManualBilling_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
