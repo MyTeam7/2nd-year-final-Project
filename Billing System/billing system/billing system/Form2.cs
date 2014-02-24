@@ -334,7 +334,7 @@ namespace billing_system
 
                 KeyPressEvent kpe = new KeyPressEvent();
 
-                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "search", this);
+                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "itm", this);
 
 
 
@@ -656,7 +656,7 @@ namespace billing_system
 
                 KeyPressEvent kpe = new KeyPressEvent();
 
-                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "search", this);
+                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "qty", this);
 
 
 
@@ -672,6 +672,22 @@ namespace billing_system
             }
 
         }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView5.Rows[e.RowIndex];
+
+                textBox20.Text = row.Cells["Item_Code"].Value.ToString();
+                textBox21.Text = row.Cells["Description"].Value.ToString();
+                textBox22.Text = row.Cells["Quantity"].Value.ToString();
+            }
+
+        }
+
+
         //---------------------------------------------------------------------------
 
 

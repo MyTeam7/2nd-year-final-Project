@@ -88,7 +88,7 @@ namespace billing_system.Classes
                     if (form == "admin")
                     {
 
-                        manualBilling("admin", character, obj);
+                        manualBilling("admin", character, obj,focus);
 
                     }
 
