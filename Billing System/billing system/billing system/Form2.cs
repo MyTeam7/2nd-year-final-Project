@@ -39,21 +39,22 @@ namespace billing_system
                 //((Control)this.adminTabPg).Enabled = false;
                 //adminTabPg.TabPages(Items).visible = true;
 
-                Items.Enabled = false;
-                Users.Enabled = false;
-                Report.Enabled = false;
-                Supplier.Enabled = false;
-                Qty.Enabled = true;
+                //Items.Enabled = false;
+                //Users.Enabled = false;
+                //Report.Enabled = false;
+                //Supplier.Enabled = false;
+                //Qty.Enabled = true;
 
-                // adminTabPg.TabPages.Remove(Items);            
+                adminTabPg.TabPages.Remove(Items);
+                adminTabPg.TabPages.Remove(Users);
 
             }
             else {
-                Items.Enabled = true;
-                Users.Enabled = true;
-                Report.Enabled = true;
-                Supplier.Enabled = true;
-                Qty.Enabled = false;
+                //Items.Enabled = true;
+                //Users.Enabled = true;
+                //Report.Enabled = true;
+                //Supplier.Enabled = true;
+                //Qty.Enabled = false;
             }
 
         }

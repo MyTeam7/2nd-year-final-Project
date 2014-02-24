@@ -1244,6 +1244,7 @@
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(86, 24);
             this.textBox23.TabIndex = 7;
+            this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
             // 
             // textBox22
             // 
@@ -1251,6 +1252,7 @@
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(69, 24);
             this.textBox22.TabIndex = 6;
+            this.textBox22.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
             // 
             // textBox21
             // 
@@ -1265,6 +1267,7 @@
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(229, 24);
             this.textBox20.TabIndex = 4;
+            this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
             // 
             // label25
             // 

@@ -9,6 +9,10 @@ namespace billing_system.Classes
     class UpdateQty : DBConnection
     {
         private MySqlCommand command;
+<<<<<<< HEAD
+=======
+       // private MySqlDataReader reader;
+>>>>>>> origin/master
         private String Quary;
         private String Quary1;
         private String Qty_level;
