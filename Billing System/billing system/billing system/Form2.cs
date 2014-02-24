@@ -621,5 +621,10 @@ namespace billing_system
             upQty.UserCatagory(Code, Qty);
         }
 
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
     }
 }
