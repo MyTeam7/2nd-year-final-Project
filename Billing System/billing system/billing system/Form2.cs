@@ -607,7 +607,7 @@ namespace billing_system
             reorder.Show();
 
         }
-
+        //----------------------------Danusha Tharanga--------------------19/02/2014-----------------------------------
         private void button11_Click(object sender, EventArgs e)
         {
             if ((textBox20.Text == "") || (textBox21.Text == "") || (textBox23.Text == "") || (textBox22.Text == ""))
@@ -620,6 +620,7 @@ namespace billing_system
             UpdateQty upQty =new  UpdateQty();
             upQty.UserCatagory(Code, Qty);
         }
+        //-------------------------------------------------------------------------------------------------------------------
 
         private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
