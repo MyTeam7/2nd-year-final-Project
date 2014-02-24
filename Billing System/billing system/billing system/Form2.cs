@@ -617,7 +617,9 @@ namespace billing_system
 
             int Code = int.Parse(textBox20.Text);
             int Qty = int.Parse(textBox23.Text);
+            //UpdateQty class
             UpdateQty upQty =new  UpdateQty();
+            //method of UpdateQty Class
             upQty.UserCatagory(Code, Qty);
         }
         //-------------------------------------------------------------------------------------------------------------------
