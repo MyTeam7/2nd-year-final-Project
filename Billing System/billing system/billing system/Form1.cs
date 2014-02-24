@@ -64,7 +64,7 @@ namespace billing_system
                                 maskedTextBox1.Text = "Password";
                                 UserName.ForeColor = Color.Gray;
                                 maskedTextBox1.ForeColor = Color.Gray;
-                                maskedTextBox1.PasswordChar = '\0';
+                                maskedTextBox1.PasswordChar = '\0'; // asric
                             }
                             else if (UPName.UserCatagory() == "User")
                             {

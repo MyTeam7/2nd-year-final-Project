@@ -5,7 +5,7 @@ using MySql.Data.MySqlClient;
 
 namespace billing_system.Classes
 {
-    //---------------Dilanka Rathnayaka----------2/7/2014---------------
+    //---------------2/9/2014....KasunEW----------------
 
     /// <summary>
     /// class for user loging
@@ -105,9 +105,9 @@ namespace billing_system.Classes
                     return false;
                 }
             }
-        } 
- 
-        //---------------Dilanka Rathnayaka----------------------2/9/2014------------------------------
+        }
+
+        //---------------2/9/2014....KasunEW----------------
 
         //Find User Catagory class
         public string UserCatagory() 
