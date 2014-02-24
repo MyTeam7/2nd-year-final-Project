@@ -115,7 +115,8 @@ namespace billing_system.Classes
         public void sendSupplier(int AlertID, int sid,string name,string company_name,string sms,Object obj)
         {          
 
-            string value = "YES";
+            string value = "yes";
+            value.ToLower();
             string query = "UPDATE alert SET Send_Info = '" + value + "' where Alert_ID= '" + AlertID + "' ";
             string query1 = "INSERT note(Note,Supplier_ID,Alert_ID,Date,Time) VALUES('" + sms + "','" + sid + "','" + AlertID + "','" + DateTime.UtcNow.ToString("yyyy-MM-dd") + "','" + DateTime.Now.ToString("HH:mm:ss tt") + "')";
 
