@@ -61,10 +61,11 @@ namespace billing_system
                                 this.Hide();
 
                                 UserName.Text = "UserName";
+                                maskedTextBox1.PasswordChar = '\0';
                                 maskedTextBox1.Text = "Password";
                                 UserName.ForeColor = Color.Gray;
                                 maskedTextBox1.ForeColor = Color.Gray;
-                                maskedTextBox1.PasswordChar = '\0';
+                                
                             }
                             else if (UPName.UserCatagory() == "User")
                             {

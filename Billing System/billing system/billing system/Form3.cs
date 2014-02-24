@@ -471,6 +471,13 @@ namespace billing_system
             else
             {
                 log.Show();
+                log.Show();
+                log.ActiveControl = log.UserName;
+                log.UserName.Text = "UserName";
+                log.maskedTextBox1.PasswordChar = '\0';
+                log.maskedTextBox1.Text = "Password";
+                log.UserName.ForeColor = Color.Gray;
+                log.maskedTextBox1.ForeColor = Color.Gray;
             }
         }
 
