@@ -627,11 +627,13 @@ namespace billing_system
             {
                 MessageBox.Show("All the fields must be Filled");
             }
-
-            int Code = int.Parse(textBox20.Text);
-            int Qty = int.Parse(textBox23.Text);
-            UpdateQty upQty =new  UpdateQty();
-            upQty.UserCatagory(Code, Qty);
+            else
+            {
+                int Code = int.Parse(textBox20.Text);
+                int Qty = int.Parse(textBox23.Text);
+                UpdateQty upQty = new UpdateQty();
+                upQty.UserCatagory(Code, Qty);
+            }
         }
 
 

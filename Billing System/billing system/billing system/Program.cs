@@ -14,7 +14,11 @@ namespace billing_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+<<<<<<< HEAD
+            Application.Run(new Admin());
+=======
+            Application.Run(new Billingform());
+>>>>>>> origin/Hasintha
 
             
         }
