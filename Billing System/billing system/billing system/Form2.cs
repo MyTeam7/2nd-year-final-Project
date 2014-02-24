@@ -32,33 +32,6 @@ namespace billing_system
 
         }
 
-        public void setQtyTab()
-        {
-            if (storekeeper_name == "Storekeeper")
-            {
-                //((Control)this.adminTabPg).Enabled = false;
-                //adminTabPg.TabPages(Items).visible = true;
-
-                //Items.Enabled = false;
-                //Users.Enabled = false;
-                //Report.Enabled = false;
-                //Supplier.Enabled = false;
-                //Qty.Enabled = true;
-
-                adminTabPg.TabPages.Remove(Items);
-                adminTabPg.TabPages.Remove(Users);
-
-            }
-            else {
-                //Items.Enabled = true;
-                //Users.Enabled = true;
-                //Report.Enabled = true;
-                //Supplier.Enabled = true;
-                //Qty.Enabled = false;
-            }
-
-        }
-
         //DataTable dbtable;
         private void button10_Click(object sender, EventArgs e)
         {
@@ -91,7 +64,16 @@ namespace billing_system
 
         private void Admin_Load(object sender, EventArgs e)
         {
+            //-------------------Danusha Tharanga--------------------------------2/19/2014---------------------------
+            if (storekeeper_name == "Storekeeper")
+            {
+                adminTabPg.TabPages.Remove(Items);
+                adminTabPg.TabPages.Remove(Users);
+                adminTabPg.TabPages.Remove(Report);
+                adminTabPg.TabPages.Remove(Supplier);
 
+            }
+            //-------------------------------------------------------------------------------------------------------
             //-------------------Dilanka Rathnayaka------------------------------2/9/2014----------------------------
             Reports rep = new Reports();
             //set dates
