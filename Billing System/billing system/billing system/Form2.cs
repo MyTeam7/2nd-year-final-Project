@@ -82,11 +82,17 @@ namespace billing_system
             rep.FormLoadComboBox(comboBox1, comboBox2);
             //-------------------------------------------------------------------------------------------------------
 
+            //-------------------Ravisha Weerasekara------------------------------2/7/2014----------------------------
             KeyPressEvent kpe = new KeyPressEvent();
-            kpe.manualBilling("admin", "", this);
+           
+            kpe.manualBilling("admin", "", this,"itm");
+            
+            kpe.manualBilling("admin", "", this,"qty");
 
             this.KeyPreview = true;
             this.textBox6.KeyDown += new KeyEventHandler(textBox6_KeyDown);
+            this.textBox24.KeyDown += new KeyEventHandler(textBox24_KeyDown);
+            //-------------------------------------------------------------------------------------------------------
 
             //---------------------------Aruna Udayana - supplier tab form_Load   ----------------------------------
             SupplierDBConnection supp = new SupplierDBConnection();
@@ -309,7 +315,7 @@ namespace billing_system
 
         }
 
-
+        //-------------------Ravisha Weerasekara------------------------------2/7/2014----------------------------
         public void textBox6_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -328,7 +334,7 @@ namespace billing_system
 
                 KeyPressEvent kpe = new KeyPressEvent();
 
-                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "search", this);
+                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "itm", this);
 
 
 
@@ -344,6 +350,7 @@ namespace billing_system
             }
 
         }
+        //---------------------------------------------------------------------------
 
         private void comboBox4_TextChanged(object sender, EventArgs e)
         {
@@ -484,6 +491,12 @@ namespace billing_system
             else
             {
                 log.Show();
+                log.ActiveControl = log.UserName;
+                log.UserName.Text = "UserName";
+                log.maskedTextBox1.PasswordChar = '\0';
+                log.maskedTextBox1.Text = "Password";
+                log.UserName.ForeColor = Color.Gray;
+                log.maskedTextBox1.ForeColor = Color.Gray;
             }
           
         }
@@ -614,13 +627,59 @@ namespace billing_system
             {
                 MessageBox.Show("All the fields must be Filled");
             }
+            else
+            {
+                int Code = int.Parse(textBox20.Text);
+                int Qty = int.Parse(textBox23.Text);
+                UpdateQty upQty = new UpdateQty();
+                upQty.UserCatagory(Code, Qty);
+            }
+        }
 
+
+        //-------------------Ravisha Weerasekara------------------------------2/24/2014----------------------------
+        public void textBox24_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            try
+            {
+
+                string keyVal;
+                string keyCd;
+                string searchKey;
+
+
+
+                keyVal = e.KeyValue.ToString(); //keycode value
+                keyCd = e.KeyCode.ToString().ToLower(); //character
+
+
+                KeyPressEvent kpe = new KeyPressEvent();
+
+                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "qty", this);
+
+
+
+                if (searchKey == "exit")
+                {
+                    this.Close();
+                }
+            }
+            catch (Exception exc)
+            {
+                MessageBox.Show("Error Occured, Please Try Again, " + exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+<<<<<<< HEAD
             int Code = int.Parse(textBox20.Text);
             int Qty = int.Parse(textBox23.Text);
             //UpdateQty class
             UpdateQty upQty =new  UpdateQty();
             //method of UpdateQty Class
             upQty.UserCatagory(Code, Qty);
+=======
+>>>>>>> origin/master
         }
         //-------------------------------------------------------------------------------------------------------------------
 
@@ -628,6 +687,27 @@ namespace billing_system
         {
 
         }
+
+        private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView5.Rows[e.RowIndex];
+
+                textBox20.Text = row.Cells["Item_Code"].Value.ToString();
+                textBox21.Text = row.Cells["Description"].Value.ToString();
+                textBox22.Text = row.Cells["Quantity"].Value.ToString();
+            }
+
+        }
+
+
+        //---------------------------------------------------------------------------
+
+
+
+
 
     }
 }

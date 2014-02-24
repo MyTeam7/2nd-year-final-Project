@@ -23,7 +23,7 @@ namespace billing_system.Classes
  
             try
             {
-                string query = "SELECT COUNT(Item_Code) FROM alert GROUP BY Send_Info ";
+                string query = "SELECT COUNT(Item_Code) FROM alert ";
                 int count = 0;        //initialize count variable
 
 
@@ -58,7 +58,7 @@ namespace billing_system.Classes
         public void search(Object obj,DataGridView dataGrid)
         {
             string query = null;
-             query = "SELECT * From alert ";
+            query = "SELECT * From alert ";
             
             try
             {
@@ -115,7 +115,8 @@ namespace billing_system.Classes
         public void sendSupplier(int AlertID, int sid,string name,string company_name,string sms,Object obj)
         {          
 
-            string value = "YES";
+            string value = "yes";
+            value.ToLower();
             string query = "UPDATE alert SET Send_Info = '" + value + "' where Alert_ID= '" + AlertID + "' ";
             string query1 = "INSERT note(Note,Supplier_ID,Alert_ID,Date,Time) VALUES('" + sms + "','" + sid + "','" + AlertID + "','" + DateTime.UtcNow.ToString("yyyy-MM-dd") + "','" + DateTime.Now.ToString("HH:mm:ss tt") + "')";
 
@@ -155,31 +156,43 @@ namespace billing_system.Classes
         public void clicButton(Object obj,string code) {
 
             string query1 = "SELECT suppliers.* FROM suppliers ,items as it where suppliers.Supplier_ID=it.Supplier_ID and it.Item_Code=" + code + "";
-
-            if (this.OpenConnection() == true)
+            try
             {
+                Form5 Rf = (Form5)obj;
+                if (this.OpenConnection() == true)
+                {
 
-                MySqlCommand cmd = new MySqlCommand(query1,connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable table = new DataTable();
-                adapter.Fill(table);
-                
-                    Form5 Rf = (Form5)obj;
+                    MySqlCommand cmd = new MySqlCommand(query1, connection);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    DataTable table = new DataTable();
+                    adapter.Fill(table);
+
+                    //Form5 Rf = (Form5)obj;
                     Rf.textBox12.Text = table.Rows[0].ItemArray[0].ToString();
                     Rf.textBox13.Text = table.Rows[0].ItemArray[1].ToString();
                     Rf.textBox19.Text = table.Rows[0].ItemArray[5].ToString();
                     Rf.textBox16.Text = table.Rows[0].ItemArray[4].ToString();
                     Rf.textBox15.Text = table.Rows[0].ItemArray[3].ToString();
-                    
+
+
+
+                }
+                this.CloseConnection();
+
+                Rf.textBox12.Enabled = true;
+                Rf.textBox13.Enabled = true;
+                Rf.textBox19.Enabled = true;
+                Rf.textBox16.Enabled = true;
+                Rf.textBox15.Enabled = true;
 
 
             }
-        
+            catch (Exception ex) {
+
+                MessageBox.Show("Error Occured," + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
-
-
       
-
 
     }
 }

@@ -19,7 +19,7 @@ namespace billing_system
     public partial class Form5 : Form
     {
         public string code;
-
+        public string alert_id;
         public Form5()
         {
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace billing_system
 
      
 
-        private void Form5_Load(object sender, EventArgs e)
+        public void Form5_Load(object sender, EventArgs e)
         {
             ReorderForm re= new ReorderForm();
             re.search(this,dataGridView1);
@@ -38,6 +38,7 @@ namespace billing_system
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
              code = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+             alert_id = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
 
             ReorderForm rdform = new ReorderForm();
             rdform.clicButton(this, code);
@@ -50,12 +51,15 @@ namespace billing_system
         {
             if ((textBox12.Text == "") || (textBox13.Text == "") || (richTextBox1.Text == "") || (textBox16.Text == "") || (textBox19.Text == "") || (textBox15.Text == ""))
             {
+                richTextBox1.Text = "";
                 MessageBox.Show("All the fields must be Filled");
+                
             }
             else
             {
 
-                int Alert_ID = int.Parse(code);
+                //int Alert_ID = int.Parse(code);
+                int alert = int.Parse(alert_id);
                 int sid = int.Parse(textBox12.Text);
                 string name = textBox13.Text;
                 string company_name = textBox16.Text;
@@ -63,13 +67,25 @@ namespace billing_system
                 string sms = richTextBox1.Text;
 
                 ReorderForm rdform = new ReorderForm();
-                rdform.sendSupplier(Alert_ID, sid, name, company_name, sms, this);
+                rdform.sendSupplier(alert, sid, name, company_name, sms, this);
+
+                Form5 reload = new Form5();
+                reload.Show();
+                this.Close();
+ 
             }
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        //validation textbox
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            ValidationText tx = new ValidationText();
+            tx.textBoxValidation_KeyPress(sender, e);
         }
        
 

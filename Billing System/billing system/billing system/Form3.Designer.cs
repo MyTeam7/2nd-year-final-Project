@@ -625,6 +625,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Billingform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Billing";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Billingform_FormClosing);
             this.Load += new System.EventHandler(this.Billingform_Load);
