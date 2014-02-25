@@ -87,7 +87,11 @@ namespace billing_system.Classes
 
                     if (form == "admin")
                     {
+<<<<<<< HEAD
 
+=======
+                        
+>>>>>>> origin/RavishaH
                         manualBilling("admin", character, obj,focus);
 
                     }
@@ -113,10 +117,34 @@ namespace billing_system.Classes
 
                     }
 
-                    if (form == "admin" && focus == "search")
+                    if (form == "admin" && focus == "itm")
                     {
                         Admin ad = (Admin)obj;
                         text = ad.textBox6;
+                        formName = "admin";
+
+                    }
+
+                    if (form == "admin" && focus == "qty")
+                    {
+                        Admin ad = (Admin)obj;
+                        text = ad.textBox24;
+                        formName = "admin";
+
+                    }
+
+                    if (form == "admin" && focus == "usrs")
+                    {
+                        Admin ad = (Admin)obj;
+                        text = ad.txtBoxSearch;
+                        formName = "admin";
+
+                    }
+
+                    if (form == "admin" && focus == "sup")
+                    {
+                        Admin ad = (Admin)obj;
+                        text = ad.textBox18;
                         formName = "admin";
 
                     }
@@ -141,7 +169,7 @@ namespace billing_system.Classes
 
                         }
 
-                        manualBilling(formName, character, obj);
+                        manualBilling(formName, character, obj,focus);
                     }
                     else
                     {
@@ -643,6 +671,20 @@ namespace billing_system.Classes
                 datagridview = frm.dataGridView5;
             }
 
+            if (form == "admin" && tab == "usrs")
+            {
+                Admin frm = (Admin)obj;
+                textbox = frm.txtBoxSearch;
+                datagridview = frm.dataGridView2;
+            }
+
+            if (form == "admin" && tab == "sup")
+            {
+                Admin frm = (Admin)obj;
+                textbox = frm.textBox18;
+                datagridview = frm.dataGridView4;
+            }
+
 
             try
             {
@@ -685,6 +727,32 @@ namespace billing_system.Classes
                     else
                     {
                         querystring = "SELECT Item_Code,Description,Quantity From items WHERE Description LIKE CONCAT('" + textbox.Text + "','%')";
+                    }
+
+                }
+
+                if (form == "admin" && tab == "usrs")
+                {
+                    if (textbox.Text == "")
+                    {
+                        querystring = "SELECT * From users";
+                    }
+                    else
+                    {
+                        querystring = "SELECT * From users WHERE User_Name LIKE CONCAT('" + textbox.Text + "','%')";
+                    }
+
+                }
+
+                if (form == "admin" && tab == "sup")
+                {
+                    if (textbox.Text == "")
+                    {
+                        querystring = "SELECT * From suppliers";
+                    }
+                    else
+                    {
+                        querystring = "SELECT * From suppliers WHERE Supplier_Name LIKE CONCAT('" + textbox.Text + "','%')";
                     }
 
                 }
