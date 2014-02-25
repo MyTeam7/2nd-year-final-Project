@@ -7,7 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using billing_system.Classes;
 using System.Media;
-
+//--------- KasunEW----
 namespace billing_system
 {
     public partial class Login : Form
@@ -64,7 +64,7 @@ namespace billing_system
                                 maskedTextBox1.Text = "Password";
                                 UserName.ForeColor = Color.Gray;
                                 maskedTextBox1.ForeColor = Color.Gray;
-                                maskedTextBox1.PasswordChar = '\0'; // asric
+                                maskedTextBox1.PasswordChar = '\0';
                             }
                             else if (UPName.UserCatagory() == "User")
                             {
@@ -143,17 +143,11 @@ namespace billing_system
             try
             {
 
-
-
                 string keyVal;
-
-                keyVal = e.KeyValue.ToString(); //keycode value
-
-
+                keyVal = e.KeyValue.ToString(); 
 
                 if (int.Parse(keyVal) > 64 && int.Parse(keyVal) < 106) //validate Alphanumeric characters-------------------------
                 {
-
 
                     if (UserName.Text == "UserName")
                     {
@@ -165,31 +159,6 @@ namespace billing_system
                     UserName.Select(UserName.Text.Length, 0);
 
                 }
-
-
-
-
-                if (int.Parse(keyVal) == 9)
-                {
-
-                    if (UserName.Text == "UserName")
-                    {
-                        SystemSounds.Hand.Play();
-                    }
-                    else
-                    {
-                        this.ActiveControl = maskedTextBox1;
-
-                    }
-
-
-
-                }
-
-
-
-
-
 
             }
             catch (Exception exc)
@@ -236,7 +205,7 @@ namespace billing_system
 
 
 
-                if (int.Parse(keyVal) == 13)
+                if (int.Parse(keyVal) == 13)//enter
                 {
                     if (maskedTextBox1.Text == "Password")
                     {
