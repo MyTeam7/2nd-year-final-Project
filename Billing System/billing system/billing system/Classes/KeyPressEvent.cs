@@ -87,8 +87,8 @@ namespace billing_system.Classes
 
                     if (form == "admin")
                     {
-                 
-                        manualBilling("admin", character, obj,focus);
+
+                        manualBilling("admin", character, obj, focus);
 
                     }
 
@@ -146,6 +146,10 @@ namespace billing_system.Classes
                     }
 
 
+
+
+
+
                     if (text.Text.Length > 0) //check is there any text in the textbox
                     {
 
@@ -161,7 +165,7 @@ namespace billing_system.Classes
 
                         }
 
-                        manualBilling(formName, character, obj,focus);
+                        manualBilling(formName, character, obj, focus);
                     }
                     else
                     {
@@ -590,19 +594,19 @@ namespace billing_system.Classes
                     {
                         SystemSounds.Hand.Play();
                     }
-                   
+
 
                 }
 
 
                 if (form == "bf" && focus == "dgv")
                 {
-                    
+
                     Form6 newform = new Form6(obj);
 
                     newform.Show();
-                   
-                    
+
+
                 }
 
 
@@ -649,7 +653,7 @@ namespace billing_system.Classes
 
             }
 
-            if (form == "admin" && tab=="itm")
+            if (form == "admin" && tab == "itm")
             {
                 Admin frm = (Admin)obj;
                 textbox = frm.textBox6;
@@ -759,7 +763,7 @@ namespace billing_system.Classes
                 if (db.OpenConnection() == true)
                 {
                     //populate data gridview from result
-                    
+
                     MySqlCommand cmd = new MySqlCommand(query, db.connection);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable table = new DataTable();

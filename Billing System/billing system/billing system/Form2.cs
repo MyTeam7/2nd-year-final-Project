@@ -19,12 +19,12 @@ namespace billing_system
             InitializeComponent();
         }
 
-        public Admin(Login log) 
+        public Admin(Login log)
         {
             this.log = log;
             InitializeComponent();
         }
-        public Admin(Login log,String storekeeper_name)
+        public Admin(Login log, String storekeeper_name)
         {
             this.storekeeper_name = storekeeper_name;
             this.log = log;
@@ -50,12 +50,12 @@ namespace billing_system
                 int textBox111 = int.Parse(textBox11.Text);
                 int textBox100 = int.Parse(textBox10.Text);
 
-                
+
 
                 ItemDBConnection adminDb = new ItemDBConnection();
 
 
-                adminDb.Insert(textboxCode, txtboxDescription, txtboxDiscount, lowestPrice, price, textBox111,textBox100);
+                adminDb.Insert(textboxCode, txtboxDescription, txtboxDiscount, lowestPrice, price, textBox111, textBox100);
                 clearItem();
 
             }
@@ -84,10 +84,10 @@ namespace billing_system
 
             //-------------------Ravisha Weerasekara------------------------------2/7/2014----------------------------
             KeyPressEvent kpe = new KeyPressEvent();
-           
-            kpe.manualBilling("admin", "", this,"itm");
+
+            kpe.manualBilling("admin", "", this, "itm");
             kpe.manualBilling("admin", "", this, "usrs");
-            kpe.manualBilling("admin", "", this,"qty");
+            kpe.manualBilling("admin", "", this, "qty");
             kpe.manualBilling("admin", "", this, "sup");
 
             this.KeyPreview = true;
@@ -95,7 +95,7 @@ namespace billing_system
             this.textBox24.KeyDown += new KeyEventHandler(textBox24_KeyDown);
             this.txtBoxSearch.KeyDown += new KeyEventHandler(txtBoxSearch_KeyDown);
             this.textBox18.KeyDown += new KeyEventHandler(textBox18_KeyDown);
-            
+
             //-------------------------------------------------------------------------------------------------------
 
             //---------------------------Aruna Udayana - supplier tab form_Load   ----------------------------------
@@ -104,7 +104,7 @@ namespace billing_system
             //---------------------------------------------------------------------------
 
             ReorderForm reorder = new ReorderForm();
-            reorder.reorderLevel(this,Reorder);
+            reorder.reorderLevel(this, Reorder);
 
         }
 
@@ -126,7 +126,7 @@ namespace billing_system
 
                 ItemDBConnection itemupda = new ItemDBConnection();
 
-                itemupda.Update(textboxCode, txtboxDescription, txtboxDiscount, lowestPrice, price, textBox111,textBox100); 
+                itemupda.Update(textboxCode, txtboxDescription, txtboxDiscount, lowestPrice, price, textBox111, textBox100);
                 clearItem();
             }
         }
@@ -153,7 +153,7 @@ namespace billing_system
         {
             KeyPressEvent kpe = new KeyPressEvent();
             kpe.manualBilling("admin", textBox6.Text, this);
-          
+
 
         }
 
@@ -316,7 +316,6 @@ namespace billing_system
             ValidationText tx = new ValidationText();
             tx.textBoxValidation_KeyPress(sender, e);
 
-
         }
 
         //-------------------Ravisha Weerasekara------------------------------2/7/2014----------------------------
@@ -328,24 +327,17 @@ namespace billing_system
 
                 string keyVal;
                 string keyCd;
-                string searchKey="";
-
+                string searchKey = "";
 
 
                 keyVal = e.KeyValue.ToString(); //keycode value
                 keyCd = e.KeyCode.ToString().ToLower(); //character
 
-                
-                    KeyPressEvent kpe = new KeyPressEvent();
 
+                KeyPressEvent kpe = new KeyPressEvent();
 
-                //KeyPressEvent kpe = new KeyPressEvent();
 
                 searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "itm", this);
-
-
-                    searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "itm", this);
-                
 
 
 
@@ -440,7 +432,7 @@ namespace billing_system
             {
 
                 comboBox4.Enabled = false;
-            }  
+            }
         }
 
         private void comboBox2_MouseClick_1(object sender, MouseEventArgs e)
@@ -509,7 +501,7 @@ namespace billing_system
                 log.UserName.ForeColor = Color.Gray;
                 log.maskedTextBox1.ForeColor = Color.Gray;
             }
-          
+
         }
 
         private void Supplier_Click(object sender, EventArgs e)
@@ -587,7 +579,7 @@ namespace billing_system
 
         private void textBox18_KeyPress(object sender, KeyPressEventArgs e) //keypress supplier search
         {
-            
+
             SupplierDBConnection supp = new SupplierDBConnection();
             supp.keyPress_SupplierSearch(textBox18, dataGridView4);
 
@@ -664,11 +656,11 @@ namespace billing_system
                 keyVal = e.KeyValue.ToString(); //keycode value
                 keyCd = e.KeyCode.ToString().ToLower(); //character
 
-               
-                    KeyPressEvent kpe = new KeyPressEvent();
 
-                    searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "qty", this);
-                
+                KeyPressEvent kpe = new KeyPressEvent();
+
+                searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "qty", this);
+
 
 
                 if (searchKey == "exit")
@@ -720,7 +712,6 @@ namespace billing_system
         }
 
 
-
         public void txtBoxSearch_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -738,11 +729,11 @@ namespace billing_system
 
 
                 KeyPressEvent kpe = new KeyPressEvent();
- 
+
+
                 searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "qty", this);
 
                 searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "usrs", this);
-
 
 
 
@@ -758,14 +749,9 @@ namespace billing_system
             }
 
 
-            int Code = int.Parse(textBox20.Text);
-            int Qty = int.Parse(textBox23.Text);
-            //UpdateQty class
-            UpdateQty upQty =new  UpdateQty();
-            //method of UpdateQty Class
-            upQty.UserCatagory(Code, Qty);
 
         }
+
         //-------------------------------------------------------------------------------------------------------------------
 
         private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -778,18 +764,9 @@ namespace billing_system
                 textBox21.Text = row.Cells["Description"].Value.ToString();
                 textBox22.Text = row.Cells["Quantity"].Value.ToString();
             }
-        }    
-
-
-
-
-
-
+        }
 
         //---------------------------------------------------------------------------
-
-
-
 
 
     }
