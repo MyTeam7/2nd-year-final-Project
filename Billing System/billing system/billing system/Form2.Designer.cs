@@ -331,6 +331,7 @@
             this.textBox11.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox11.Location = new System.Drawing.Point(776, 52);
+            this.textBox11.MaxLength = 12;
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(130, 26);
             this.textBox11.TabIndex = 1;
@@ -341,6 +342,7 @@
             this.textBox10.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox10.Location = new System.Drawing.Point(519, 52);
+            this.textBox10.MaxLength = 12;
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(130, 26);
             this.textBox10.TabIndex = 1;
@@ -351,6 +353,7 @@
             this.txtBoxDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxDescription.Location = new System.Drawing.Point(362, 16);
+            this.txtBoxDescription.MaxLength = 50;
             this.txtBoxDescription.Name = "txtBoxDescription";
             this.txtBoxDescription.Size = new System.Drawing.Size(339, 26);
             this.txtBoxDescription.TabIndex = 1;
@@ -390,6 +393,7 @@
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox2.Location = new System.Drawing.Point(107, 52);
+            this.textBox2.MaxLength = 10;
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(93, 26);
             this.textBox2.TabIndex = 1;
@@ -400,6 +404,7 @@
             this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox8.Location = new System.Drawing.Point(306, 52);
+            this.textBox8.MaxLength = 10;
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(125, 26);
             this.textBox8.TabIndex = 1;
@@ -450,6 +455,7 @@
             this.txtBoxCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCode.Location = new System.Drawing.Point(51, 15);
+            this.txtBoxCode.MaxLength = 10;
             this.txtBoxCode.Name = "txtBoxCode";
             this.txtBoxCode.Size = new System.Drawing.Size(186, 26);
             this.txtBoxCode.TabIndex = 1;
@@ -545,6 +551,7 @@
             this.txtBoxSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxSearch.Location = new System.Drawing.Point(95, 187);
+            this.txtBoxSearch.MaxLength = 30;
             this.txtBoxSearch.Name = "txtBoxSearch";
             this.txtBoxSearch.Size = new System.Drawing.Size(456, 26);
             this.txtBoxSearch.TabIndex = 1;
@@ -579,6 +586,7 @@
             this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox9.Location = new System.Drawing.Point(369, 16);
+            this.textBox9.MaxLength = 12;
             this.textBox9.Name = "textBox9";
             this.textBox9.PasswordChar = '*';
             this.textBox9.Size = new System.Drawing.Size(245, 26);
@@ -609,6 +617,7 @@
             this.textBox14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox14.Location = new System.Drawing.Point(94, 15);
+            this.textBox14.MaxLength = 15;
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(175, 26);
             this.textBox14.TabIndex = 1;
@@ -646,6 +655,7 @@
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox1.Location = new System.Drawing.Point(344, 16);
+            this.textBox1.MaxLength = 30;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(373, 26);
             this.textBox1.TabIndex = 1;
@@ -665,6 +675,7 @@
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox3.Location = new System.Drawing.Point(80, 52);
+            this.textBox3.MaxLength = 50;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(456, 26);
             this.textBox3.TabIndex = 1;
@@ -684,6 +695,7 @@
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox4.Location = new System.Drawing.Point(782, 16);
+            this.textBox4.MaxLength = 10;
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(151, 26);
             this.textBox4.TabIndex = 1;
@@ -704,6 +716,7 @@
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox5.Location = new System.Drawing.Point(588, 52);
+            this.textBox5.MaxLength = 75;
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(345, 26);
             this.textBox5.TabIndex = 1;
@@ -723,6 +736,7 @@
             this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox7.Location = new System.Drawing.Point(65, 15);
+            this.textBox7.MaxLength = 8;
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(189, 26);
             this.textBox7.TabIndex = 1;
@@ -1004,7 +1018,8 @@
             // 
             this.textBox18.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(107, 134);
+            this.textBox18.Location = new System.Drawing.Point(104, 134);
+            this.textBox18.MaxLength = 50;
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(456, 26);
             this.textBox18.TabIndex = 17;
@@ -1049,6 +1064,7 @@
             // 
             this.textBox16.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox16.Location = new System.Drawing.Point(757, 16);
+            this.textBox16.MaxLength = 30;
             this.textBox16.Name = "textBox16";
             this.textBox16.Size = new System.Drawing.Size(195, 24);
             this.textBox16.TabIndex = 1;
@@ -1057,6 +1073,7 @@
             // 
             this.textBox19.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox19.Location = new System.Drawing.Point(313, 60);
+            this.textBox19.MaxLength = 15;
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(273, 24);
             this.textBox19.TabIndex = 1;
@@ -1065,6 +1082,7 @@
             // 
             this.textBox17.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox17.Location = new System.Drawing.Point(662, 62);
+            this.textBox17.MaxLength = 50;
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(273, 24);
             this.textBox17.TabIndex = 1;
@@ -1121,6 +1139,7 @@
             // 
             this.textBox15.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox15.Location = new System.Drawing.Point(62, 62);
+            this.textBox15.MaxLength = 10;
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(176, 24);
             this.textBox15.TabIndex = 1;
@@ -1139,6 +1158,7 @@
             // 
             this.textBox12.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox12.Location = new System.Drawing.Point(48, 13);
+            this.textBox12.MaxLength = 8;
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(150, 24);
             this.textBox12.TabIndex = 1;
@@ -1264,6 +1284,7 @@
             this.textBox24.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox24.Location = new System.Drawing.Point(95, 82);
+            this.textBox24.MaxLength = 50;
             this.textBox24.Name = "textBox24";
             this.textBox24.ReadOnly = true;
             this.textBox24.Size = new System.Drawing.Size(456, 26);
@@ -1289,6 +1310,7 @@
             // textBox23
             // 
             this.textBox23.Location = new System.Drawing.Point(748, 10);
+            this.textBox23.MaxLength = 12;
             this.textBox23.Name = "textBox23";
             this.textBox23.Size = new System.Drawing.Size(86, 24);
             this.textBox23.TabIndex = 7;
@@ -1297,6 +1319,7 @@
             // textBox22
             // 
             this.textBox22.Location = new System.Drawing.Point(880, 10);
+            this.textBox22.MaxLength = 12;
             this.textBox22.Name = "textBox22";
             this.textBox22.Size = new System.Drawing.Size(69, 24);
             this.textBox22.TabIndex = 6;
@@ -1305,6 +1328,7 @@
             // textBox21
             // 
             this.textBox21.Location = new System.Drawing.Point(394, 10);
+            this.textBox21.MaxLength = 50;
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(279, 24);
             this.textBox21.TabIndex = 5;
@@ -1312,6 +1336,7 @@
             // textBox20
             // 
             this.textBox20.Location = new System.Drawing.Point(62, 10);
+            this.textBox20.MaxLength = 10;
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(229, 24);
             this.textBox20.TabIndex = 4;
