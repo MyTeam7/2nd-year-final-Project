@@ -103,6 +103,14 @@ namespace billing_system
 
                 if (searchKey == "exit")
                 {
+                    
+                    log.Show();
+                    log.ActiveControl = log.UserName;
+                    log.UserName.Text = "UserName";
+                    log.maskedTextBox1.PasswordChar = '\0';
+                    log.maskedTextBox1.Text = "Password";
+                    log.UserName.ForeColor = Color.Gray;
+                    log.maskedTextBox1.ForeColor = Color.Gray;
                     this.Close();
                 }
             }
@@ -145,6 +153,13 @@ namespace billing_system
                 {
                     if (MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
+                        log.Show();
+                        log.ActiveControl = log.UserName;
+                        log.UserName.Text = "UserName";
+                        log.maskedTextBox1.PasswordChar = '\0';
+                        log.maskedTextBox1.Text = "Password";
+                        log.UserName.ForeColor = Color.Gray;
+                        log.maskedTextBox1.ForeColor = Color.Gray;
                         this.Close();
                     }
 
@@ -455,23 +470,7 @@ namespace billing_system
 
         private void Billingform_FormClosing(object sender, FormClosingEventArgs e)
         {
-            const string message =
-        "Are you sure that you would like to close the form?";
-            const string caption = "Form Closing";
-            var result = MessageBox.Show(message, caption,
-                                         MessageBoxButtons.YesNo,
-                                         MessageBoxIcon.Question);
-
-            // If the no button was pressed ... 
-            if (result == DialogResult.No)
-            {
-                // cancel the closure of the form.
-                e.Cancel = true;
-            }
-            else
-            {
-                log.Show();
-            }
+           
         }
 
 

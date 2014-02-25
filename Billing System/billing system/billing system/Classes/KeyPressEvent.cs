@@ -87,8 +87,8 @@ namespace billing_system.Classes
 
                     if (form == "admin")
                     {
-
-                        manualBilling("admin", character, obj);
+                 
+                        manualBilling("admin", character, obj,focus);
 
                     }
 
@@ -113,7 +113,7 @@ namespace billing_system.Classes
 
                     }
 
-                    if (form == "admin" && focus == "search")
+                    if (form == "admin" && focus == "itm")
                     {
                         Admin ad = (Admin)obj;
                         text = ad.textBox6;
@@ -121,9 +121,29 @@ namespace billing_system.Classes
 
                     }
 
+                    if (form == "admin" && focus == "qty")
+                    {
+                        Admin ad = (Admin)obj;
+                        text = ad.textBox24;
+                        formName = "admin";
 
+                    }
 
+                    if (form == "admin" && focus == "usrs")
+                    {
+                        Admin ad = (Admin)obj;
+                        text = ad.txtBoxSearch;
+                        formName = "admin";
 
+                    }
+
+                    if (form == "admin" && focus == "sup")
+                    {
+                        Admin ad = (Admin)obj;
+                        text = ad.textBox18;
+                        formName = "admin";
+
+                    }
 
 
                     if (text.Text.Length > 0) //check is there any text in the textbox
@@ -141,7 +161,7 @@ namespace billing_system.Classes
 
                         }
 
-                        manualBilling(formName, character, obj);
+                        manualBilling(formName, character, obj,focus);
                     }
                     else
                     {
@@ -610,7 +630,7 @@ namespace billing_system.Classes
 
         //--------------startOfManualBilling Function-------------------------------------------------------------------------------------------------------------------
 
-        public void manualBilling(string form, string searchKey, object obj = null)
+        public void manualBilling(string form, string searchKey, object obj = null, string tab = null)
         {
             DBConnection db = new DBConnection();
             TextBox textbox = null;
@@ -629,13 +649,33 @@ namespace billing_system.Classes
 
             }
 
-            if (form == "admin")
+            if (form == "admin" && tab=="itm")
             {
                 Admin frm = (Admin)obj;
                 textbox = frm.textBox6;
                 datagridview = frm.dataGridView1;
             }
 
+            if (form == "admin" && tab == "qty")
+            {
+                Admin frm = (Admin)obj;
+                textbox = frm.textBox24;
+                datagridview = frm.dataGridView5;
+            }
+
+            if (form == "admin" && tab == "usrs")
+            {
+                Admin frm = (Admin)obj;
+                textbox = frm.txtBoxSearch;
+                datagridview = frm.dataGridView2;
+            }
+
+            if (form == "admin" && tab == "sup")
+            {
+                Admin frm = (Admin)obj;
+                textbox = frm.textBox18;
+                datagridview = frm.dataGridView4;
+            }
 
 
             try
@@ -657,7 +697,7 @@ namespace billing_system.Classes
                     querystring = "SELECT * From items WHERE Description LIKE CONCAT('" + textbox.Text + "','%')";
                 }
 
-                if (form == "admin")
+                if (form == "admin" && tab == "itm")
                 {
                     if (textbox.Text == "")
                     {
@@ -670,6 +710,44 @@ namespace billing_system.Classes
 
                 }
 
+                if (form == "admin" && tab == "qty")
+                {
+                    if (textbox.Text == "")
+                    {
+                        querystring = "SELECT Item_Code,Description,Quantity From items";
+                    }
+                    else
+                    {
+                        querystring = "SELECT Item_Code,Description,Quantity From items WHERE Description LIKE CONCAT('" + textbox.Text + "','%')";
+                    }
+
+                }
+
+                if (form == "admin" && tab == "usrs")
+                {
+                    if (textbox.Text == "")
+                    {
+                        querystring = "SELECT * From users";
+                    }
+                    else
+                    {
+                        querystring = "SELECT * From users WHERE User_Name LIKE CONCAT('" + textbox.Text + "','%')";
+                    }
+
+                }
+
+                if (form == "admin" && tab == "sup")
+                {
+                    if (textbox.Text == "")
+                    {
+                        querystring = "SELECT * From suppliers";
+                    }
+                    else
+                    {
+                        querystring = "SELECT * From suppliers WHERE Supplier_Name LIKE CONCAT('" + textbox.Text + "','%')";
+                    }
+
+                }
 
 
 
@@ -681,6 +759,7 @@ namespace billing_system.Classes
                 if (db.OpenConnection() == true)
                 {
                     //populate data gridview from result
+                    
                     MySqlCommand cmd = new MySqlCommand(query, db.connection);
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                     DataTable table = new DataTable();

@@ -72,9 +72,6 @@
             this.Disc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Rate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -273,6 +270,7 @@
             this.txtBoxCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCode.Location = new System.Drawing.Point(87, 16);
+            this.txtBoxCode.MaxLength = 5;
             this.txtBoxCode.Name = "txtBoxCode";
             this.txtBoxCode.ReadOnly = true;
             this.txtBoxCode.Size = new System.Drawing.Size(189, 23);
@@ -523,58 +521,13 @@
             this.Total.Name = "Total";
             this.Total.ReadOnly = true;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Gray;
-            this.button1.BackgroundImage = global::billing_system.Properties.Resources.add;
-            this.button1.Enabled = false;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(15, 691);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(80, 43);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "NEW";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Gainsboro;
-            this.button3.BackgroundImage = global::billing_system.Properties.Resources.search;
-            this.button3.Enabled = false;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(105, 691);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(80, 43);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Search";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button13
-            // 
-            this.button13.BackColor = System.Drawing.Color.Gainsboro;
-            this.button13.BackgroundImage = global::billing_system.Properties.Resources.edit;
-            this.button13.Enabled = false;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button13.Location = new System.Drawing.Point(205, 691);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(80, 43);
-            this.button13.TabIndex = 25;
-            this.button13.Text = "Edit";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button13.UseVisualStyleBackColor = false;
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Gainsboro;
             this.button2.BackgroundImage = global::billing_system.Properties.Resources.print;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(751, 690);
+            this.button2.Location = new System.Drawing.Point(913, 690);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(80, 43);
             this.button2.TabIndex = 22;
@@ -588,7 +541,7 @@
             this.button15.BackgroundImage = global::billing_system.Properties.Resources.delete;
             this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button15.Location = new System.Drawing.Point(299, 690);
+            this.button15.Location = new System.Drawing.Point(753, 691);
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(80, 43);
             this.button15.TabIndex = 23;
@@ -608,9 +561,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(1018, 740);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button13);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button15);
             this.Controls.Add(this.panel4);
@@ -678,9 +628,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Disc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Rate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Total;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Timer timer1;
