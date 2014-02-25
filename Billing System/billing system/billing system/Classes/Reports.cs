@@ -91,22 +91,27 @@ namespace billing_system.Classes
             int switchCase = 0;
             string quary;
 
+            //Select All & Type Is NON
             if (cmb1.SelectedIndex == 1 && cmb2.SelectedIndex == 0)
             {
                 switchCase = 2;
             }
+            //Select All & Type is CA
             else if (cmb1.SelectedIndex == 1 && cmb2.SelectedIndex == 1)
             {
                 switchCase = 1;
             }
+            //Select All & Type is CR
             else if (cmb1.SelectedIndex == 1 && cmb2.SelectedIndex == 2)
             {
                 switchCase = 1;
             }
+            //Select UserName & Type is NON
             else if (cmb1.SelectedIndex >= 1 && cmb2.SelectedIndex == 0)
             {
                 switchCase = 4;
             }
+            //Select UserName & Type is CR or CA
             else if (cmb1.SelectedIndex >= 1 && cmb2.SelectedIndex > 0)
             {
                 switchCase = 3;
@@ -169,7 +174,7 @@ namespace billing_system.Classes
 
                 case 3:
 
-                    quary = "SELECT User_Name FROM users WHERE Name = '" + cmb1.SelectedItem.ToString() + "'";
+                    quary = "SELECT User_Name FROM users WHERE Name = '" + d + "'";
 
                     OpenConnection();
 
