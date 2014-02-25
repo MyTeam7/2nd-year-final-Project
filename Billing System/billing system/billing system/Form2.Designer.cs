@@ -455,7 +455,11 @@
             this.txtBoxCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBoxCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBoxCode.Location = new System.Drawing.Point(51, 15);
+<<<<<<< HEAD
             this.txtBoxCode.MaxLength = 10;
+=======
+            this.txtBoxCode.MaxLength = 5;
+>>>>>>> origin/Dilanka
             this.txtBoxCode.Name = "txtBoxCode";
             this.txtBoxCode.Size = new System.Drawing.Size(186, 26);
             this.txtBoxCode.TabIndex = 1;
@@ -1312,6 +1316,7 @@
             this.textBox23.Location = new System.Drawing.Point(748, 10);
             this.textBox23.MaxLength = 12;
             this.textBox23.Name = "textBox23";
+            this.textBox23.ReadOnly = true;
             this.textBox23.Size = new System.Drawing.Size(86, 24);
             this.textBox23.TabIndex = 7;
             this.textBox23.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
@@ -1330,6 +1335,7 @@
             this.textBox21.Location = new System.Drawing.Point(394, 10);
             this.textBox21.MaxLength = 50;
             this.textBox21.Name = "textBox21";
+            this.textBox21.ReadOnly = true;
             this.textBox21.Size = new System.Drawing.Size(279, 24);
             this.textBox21.TabIndex = 5;
             // 
@@ -1338,6 +1344,7 @@
             this.textBox20.Location = new System.Drawing.Point(62, 10);
             this.textBox20.MaxLength = 10;
             this.textBox20.Name = "textBox20";
+            this.textBox20.ReadOnly = true;
             this.textBox20.Size = new System.Drawing.Size(229, 24);
             this.textBox20.TabIndex = 4;
             this.textBox20.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);

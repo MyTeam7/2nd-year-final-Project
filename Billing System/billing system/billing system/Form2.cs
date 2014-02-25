@@ -620,7 +620,7 @@ namespace billing_system
             reorder.Show();
 
         }
-
+        //----------------------------Danusha Tharanga--------------------19/02/2014-----------------------------------
         private void button11_Click(object sender, EventArgs e)
         {
             if ((textBox20.Text == "") || (textBox21.Text == "") || (textBox23.Text == "") || (textBox22.Text == ""))
@@ -671,11 +671,19 @@ namespace billing_system
 
             }
 
+
+            int Code = int.Parse(textBox20.Text);
+            int Qty = int.Parse(textBox23.Text);
+            //UpdateQty class
+            UpdateQty upQty =new  UpdateQty();
+            //method of UpdateQty Class
+            upQty.UserCatagory(Code, Qty);
+
         }
+        //-------------------------------------------------------------------------------------------------------------------
 
         private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView5.Rows[e.RowIndex];
@@ -684,9 +692,7 @@ namespace billing_system
                 textBox21.Text = row.Cells["Description"].Value.ToString();
                 textBox22.Text = row.Cells["Quantity"].Value.ToString();
             }
-
-        }
-
+        }    
 
         //---------------------------------------------------------------------------
 

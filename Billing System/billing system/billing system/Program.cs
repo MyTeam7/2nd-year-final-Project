@@ -14,7 +14,12 @@ namespace billing_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+<<<<<<< HEAD
             Application.Run(new Admin());
+=======
+
+            Application.Run(new Login());
+>>>>>>> origin/Dilanka
 
             
 
