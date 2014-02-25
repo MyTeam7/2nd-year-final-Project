@@ -144,6 +144,7 @@ namespace billing_system.Classes
 
                     gDView.DataSource = table;
                     CloseConnection();
+                    GridViewElingnment(gDView);
                     break;
 
                 case 2:
@@ -168,7 +169,7 @@ namespace billing_system.Classes
 
                     gDView.DataSource = table3;
                     CloseConnection();
-
+                    GridViewElingnment(gDView);
                    
                     break;
 
@@ -206,6 +207,7 @@ namespace billing_system.Classes
 
                     gDView.DataSource = table1;
                     CloseConnection();
+                    GridViewElingnment(gDView);
                     break;
 
                 case 4:
@@ -242,6 +244,7 @@ namespace billing_system.Classes
 
                     gDView.DataSource = table2;
                     CloseConnection();
+                    GridViewElingnment(gDView);
                     break;
 
                 case 5:
@@ -278,10 +281,20 @@ namespace billing_system.Classes
 
                     gDView.DataSource = table4;
                     CloseConnection();
+                    GridViewElingnment(gDView);
                     break;
 
                 default:
                     break;
+            }
+        }
+
+        //Correct The GridView alignment
+        public void GridViewElingnment(DataGridView gDView1) 
+        {
+            if (gDView1.RowCount != 0)
+            {
+                gDView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
             }
         }
 
