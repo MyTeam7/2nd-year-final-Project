@@ -5,14 +5,11 @@ using MySql.Data.MySqlClient;
 
 namespace billing_system.Classes
 {
-    //---------------Dilanka Rathnayaka----------2/7/2014---------------
+    //---------------2/9/2014....KasunEW----------------
 
-    /// <summary>
-    /// class for user loging
-    /// </summary>
     class User:DBConnection
     {
-        //store username & password
+       
         private string Username;
         private string Password;
         private string DBUsername;
@@ -22,28 +19,28 @@ namespace billing_system.Classes
         private MySqlCommand command;
         private MySqlDataReader reader;
 
-        //Constructor
+        
         public User() 
         {
             DBUsername = null;
             DBPassword = null;
         }
 
-        //property for DBUsername
+       
         public string GetUsername 
         {
             get { return Username; }
             set { Username = value; }
         }
 
-        //property for DBPassword
+        
         public string GetPassword
         {
             get { return Password; }
             set { Password = value; }
         }
 
-        //Authenticate username
+        
         public bool UsernameAuthenticaion() 
         {
             OpenConnection();
@@ -59,13 +56,13 @@ namespace billing_system.Classes
             CloseConnection();
             if (DBUsername == null)
             {
-                //if enter username not in the database
+                
                 return false;
             }
                 return true;
         }
 
-        //Authenticate password
+        
         public bool PasswordAuthenticaion()
         {
             OpenConnection();
@@ -80,12 +77,12 @@ namespace billing_system.Classes
             reader.Close();
             if (Password == null)
             {
-                //if entered password not in the database
+               
                 return false;
             }
             else
             {
-                //check if entered username and password match 
+              
                 Quary = "SELECT Password FROM users WHERE User_Name = '" + Username + "'";
                 command = new MySqlCommand(Quary, connection);
                 reader = command.ExecuteReader();
@@ -105,11 +102,11 @@ namespace billing_system.Classes
                     return false;
                 }
             }
-        } 
- 
-        //---------------Dilanka Rathnayaka----------------------2/9/2014------------------------------
+        }
 
-        //Find User Catagory class
+        //---------------2/9/2014....KasunEW----------------
+
+  
         public string UserCatagory() 
         {
             OpenConnection();
