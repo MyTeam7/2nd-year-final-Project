@@ -48,25 +48,21 @@ namespace billing_system
 
         private void button5_Click(object sender, EventArgs e)                             
         {
+
+            
            
 
-            double total;
+            decimal total;
 
-            double price;
+        
+            decimal quantity;
 
-            price = double.Parse(textBox8.Text);
-
-
-            int quantity;
-
-            quantity = int.Parse(textBox10.Text);
+            Decimal.TryParse(textBox10.Text, out quantity);
+            
 
 
 
-         
-
-
-
+            Billingform bf = (Billingform)frm;
 
 
             try
@@ -77,59 +73,47 @@ namespace billing_system
                 {
 
 
-                   
-
-                    Billingform bf = (Billingform)frm;
 
 
-                    double discount_Price;
+                    decimal discount_Price;
 
-                    double Tot_Discount_price;
-                   
-
-
-                    discount_Price = double.Parse(txtBoxDiscount.Text);
-
-                    price = double.Parse(textBox8.Text);
-
-
-                    Tot_Discount_price = (quantity * discount_Price);                  //total discount price
-
-                    total = ( (quantity * price) - Tot_Discount_price);                  //calculate total when discount price is entered
+                    Decimal.TryParse(txtBoxDiscount.Text + ".00", out discount_Price);
+                    
 
 
 
 
+                    total = (quantity * discount_Price);                  //calculate total when discount price is entered
 
-                    bf.dataGridView1.Rows[bf.dataGridView1.CurrentCell.RowIndex].Cells[5].Value = textBox8.Text;     //update rate in dgv
 
 
-                    bf.dataGridView1.Rows[bf.dataGridView1.CurrentCell.RowIndex].Cells[4].Value = Tot_Discount_price;    //discount
 
 
                     bf.dataGridView1.Rows[bf.dataGridView1.CurrentCell.RowIndex].Cells[6].Value = total; //total
 
 
 
+
+
                     //...........................update total,qty & discount
 
-                    double sum = 0;
+                    decimal sum = 0;
 
                     int qty = 0;
 
-                    double discount = 0;
-
-                   // discount = (quantity * discount_Price);
+                    decimal discount = 0;
 
 
-                    for (int i = 0; i < bf.dataGridView1.Rows.Count ; i++)
+
+
+                    for (int i = 0; i < bf.dataGridView1.Rows.Count; i++)
                     {
 
-                        sum += Convert.ToDouble(bf.dataGridView1.Rows[i].Cells[6].Value);
+                        sum += Convert.ToDecimal(bf.dataGridView1.Rows[i].Cells[6].Value);
 
                         qty += Convert.ToInt32(bf.dataGridView1.Rows[i].Cells[3].Value);
 
-                        discount += Convert.ToDouble(bf.dataGridView1.Rows[i].Cells[4].Value);
+                        discount += Convert.ToDecimal(bf.dataGridView1.Rows[i].Cells[4].Value);
 
 
 
@@ -137,14 +121,17 @@ namespace billing_system
 
                     bf.label7.Text = sum.ToString();
 
-                   bf.label2.Text = qty.ToString();
+                    bf.label2.Text = qty.ToString();
 
-                    bf.label4.Text = discount.ToString();   
-         
+                    bf.label4.Text = discount.ToString();
+
 
 
 
                     this.Close();
+
+                    
+
 
                 }
 
@@ -155,9 +142,10 @@ namespace billing_system
 
 
 
-                    int presentage;
+                    decimal presentage;
 
-                    presentage = int.Parse(textBox1.Text);
+                    Decimal.TryParse(textBox1.Text, out presentage);
+                    
 
 
 
@@ -165,13 +153,15 @@ namespace billing_system
                     if ((presentage > 0 && presentage <= 100))
                     {
 
+                        decimal price;
 
-                        Billingform bf = (Billingform)frm;
-
-                        double discount;
+                        Decimal.TryParse(textBox8.Text, out price);
 
 
-                        discount = (price - (price * (presentage * 0.01)));                  //calculate discount when presentage is entered
+                        decimal discount;
+
+
+                        discount = (price * (presentage /100));                  //calculate discount when presentage is entered
 
 
                         total = (quantity * (price - discount));                             //calculate total
@@ -183,9 +173,6 @@ namespace billing_system
 
 
 
-                        bf.dataGridView1.Rows[bf.dataGridView1.CurrentCell.RowIndex].Cells[5].Value = textBox8.Text;    //update rate
-
-
                         bf.dataGridView1.Rows[bf.dataGridView1.CurrentCell.RowIndex].Cells[4].Value = discount;          //discount
 
 
@@ -193,22 +180,25 @@ namespace billing_system
 
 
 
-   // ..............................................................update labels
-                        double sum = 0;
+                        // ..............................................................update labels
+
+
+
+                        decimal sum = 0;
 
                         int qty = 0;
 
-                        double discount1 = 0;
+                        decimal discount1 = 0;
 
 
                         for (int i = 0; i < bf.dataGridView1.Rows.Count; i++)
                         {
 
-                            sum += Convert.ToDouble(bf.dataGridView1.Rows[i].Cells[6].Value);
+                            sum += Convert.ToDecimal(bf.dataGridView1.Rows[i].Cells[6].Value);
 
                             qty += Convert.ToInt32(bf.dataGridView1.Rows[i].Cells[3].Value);
 
-                            discount1 += Convert.ToDouble(bf.dataGridView1.Rows[i].Cells[4].Value);
+                            discount1 += Convert.ToDecimal(bf.dataGridView1.Rows[i].Cells[4].Value);
 
 
 
@@ -218,15 +208,16 @@ namespace billing_system
 
                         bf.label2.Text = qty.ToString();
 
-                        bf.label4.Text = discount1.ToString();   
-         
-
+                        bf.label4.Text = discount1.ToString();
 
 
 
 
 
                         this.Close();
+
+
+
 
                     }
 
@@ -263,15 +254,22 @@ namespace billing_system
 
 
 
+                
 
 
             }
 
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                MessageBox.Show("Unexpected Error Occured");
+                MessageBox.Show("Please Try Again" +ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
 
+            }
+
+            finally
+            {
+                BillGeneration bill = new BillGeneration();
+                bill.total(frm);
             }
 
 
@@ -280,10 +278,7 @@ namespace billing_system
 
 
 
-        
-             
        
-
     
 
 
