@@ -354,9 +354,10 @@ namespace billing_system
 
         }
         //---------------------------------------------------------------------------
-
+        //------------------------Dilanka Rathnayaka--------------------02/20/2014--------------------------------
         private void comboBox4_TextChanged(object sender, EventArgs e)
         {
+            //Item Search
             if (comboBox4.Text != "")
             {
                 string cmbText = comboBox4.Text;
@@ -376,26 +377,13 @@ namespace billing_system
 
         private void comboBox2_SelectedValueChanged(object sender, EventArgs e)
         {
-            /* if (comboBox1.SelectedIndex == 0)
-             {
-                 MessageBox.Show("You Cant Sellect Any.Because No cashier Selected");
-                 comboBox2.SelectedIndex = 0;
-             }
-             if (comboBox2.SelectedItem.ToString() == "NON")
-             {
-                 if (comboBox1.SelectedItem.ToString() == "NON")
-                 {
-                     comboBox4.Enabled = true;
-                 }
-                
-             }
-             else
-                 comboBox4.Enabled = false;*/
+         
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "NON")
+            //Cashier is NOT NON Item is dissable
+            if (comboBox1.SelectedIndex == 0)
             {
                 comboBox4.Enabled = true;
 
@@ -414,6 +402,7 @@ namespace billing_system
 
         private void comboBox2_MouseClick(object sender, MouseEventArgs e)
         {
+            //Cashier is NON Can't select anything in Type
             if (comboBox1.SelectedIndex == 0)
             {
                 MessageBox.Show("You Cant Sellect Any.Because No cashier Selected");
@@ -423,7 +412,7 @@ namespace billing_system
 
         private void comboBox1_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (comboBox1.SelectedItem.ToString() == "NON")
+            if (comboBox1.SelectedIndex == 0)
             {
                 comboBox4.Enabled = true;
 
@@ -446,21 +435,7 @@ namespace billing_system
 
         private void comboBox2_SelectedValueChanged_1(object sender, EventArgs e)
         {
-            /* if (comboBox1.SelectedIndex == 0)
-            {
-                MessageBox.Show("You Cant Sellect Any.Because No cashier Selected");
-                comboBox2.SelectedIndex = 0;
-            }
-            if (comboBox2.SelectedItem.ToString() == "NON")
-            {
-                if (comboBox1.SelectedItem.ToString() == "NON")
-                {
-                    comboBox4.Enabled = true;
-                }
-                
-            }
-            else
-                comboBox4.Enabled = false;*/
+            
         }
 
         private void comboBox2_TextChanged_1(object sender, EventArgs e)
