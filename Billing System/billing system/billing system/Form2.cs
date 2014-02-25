@@ -338,15 +338,15 @@ namespace billing_system
                 
                     KeyPressEvent kpe = new KeyPressEvent();
 
-<<<<<<< HEAD
-                KeyPressEvent kpe = new KeyPressEvent();
+
+                //KeyPressEvent kpe = new KeyPressEvent();
 
                 searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "itm", this);
 
-=======
+
                     searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "itm", this);
                 
->>>>>>> origin/RavishaH
+
 
 
                 if (searchKey == "exit")
@@ -738,12 +738,11 @@ namespace billing_system
 
 
                 KeyPressEvent kpe = new KeyPressEvent();
-
-<<<<<<< HEAD
+ 
                 searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "qty", this);
-=======
+
                 searchKey = kpe.manualSearchkey(keyVal, keyCd, "admin", "usrs", this);
->>>>>>> origin/RavishaH
+
 
 
 
@@ -767,7 +766,6 @@ namespace billing_system
             upQty.UserCatagory(Code, Qty);
 
         }
-<<<<<<< HEAD
         //-------------------------------------------------------------------------------------------------------------------
 
         private void dataGridView5_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -781,12 +779,12 @@ namespace billing_system
                 textBox22.Text = row.Cells["Quantity"].Value.ToString();
             }
         }    
-=======
 
 
 
 
->>>>>>> origin/RavishaH
+
+
 
         //---------------------------------------------------------------------------
 

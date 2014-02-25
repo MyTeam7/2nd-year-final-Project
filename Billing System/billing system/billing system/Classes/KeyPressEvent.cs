@@ -87,11 +87,7 @@ namespace billing_system.Classes
 
                     if (form == "admin")
                     {
-<<<<<<< HEAD
-
-=======
-                        
->>>>>>> origin/RavishaH
+                 
                         manualBilling("admin", character, obj,focus);
 
                     }
@@ -148,10 +144,6 @@ namespace billing_system.Classes
                         formName = "admin";
 
                     }
-
-
-
-
 
 
                     if (text.Text.Length > 0) //check is there any text in the textbox
